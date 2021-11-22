@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-import { WshAccordionModule } from '@wsh/ui-elements';
+import { WshAccordionModule, WshButtonModule } from '@wsh/ui-elements';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.router';
@@ -16,7 +16,8 @@ import { AppRoutingModule } from './app.router';
     AppRoutingModule,
     WshAccordionModule.withConfig({
       collapsing: false
-    })
+    }),
+    WshButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
