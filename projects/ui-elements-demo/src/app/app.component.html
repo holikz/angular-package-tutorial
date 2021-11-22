@@ -1,0 +1,149 @@
+<h1>Accordion Test</h1>
+<div style="max-width: 800px; width: 90%; height: 100%; margin: 0 auto">
+  <wsh-accordion [collapsing]="collapsing">
+    <wsh-accordion-item title="Alapértelmezett címsor">
+      <ng-template wshAccordionContent>
+        <div style="padding: 1rem">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde
+          quibusdam assumenda architecto facilis adipisci natus, aspernatur
+          voluptatem corporis ratione, repellat sit aut delectus autem pariatur
+          ullam magni soluta, debitis eligendi?
+        </div>
+      </ng-template>
+    </wsh-accordion-item>
+
+    <wsh-accordion-item [disabled]="true">
+      <ng-template wshAccordionHeader let-toggle="toggle">
+        <div
+          style="
+            padding: 0 1rem;
+            background-color: aqua;
+            display: flex;
+            align-items: center;
+            height: 50px;
+            justify-content: space-between;
+          "
+        >
+          <div>🔥🔥 Saját header 🔥🔥</div>
+          <div><button (click)="toggle()">Toggle</button></div>
+        </div>
+      </ng-template>
+
+      <ng-template wshAccordionContent>
+        <div style="padding: 1rem">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde
+          quibusdam assumenda architecto facilis adipisci natus, aspernatur
+          voluptatem corporis ratione, repellat sit aut delectus autem pariatur
+          ullam magni soluta, debitis eligendi?
+        </div>
+      </ng-template>
+    </wsh-accordion-item>
+
+    <wsh-accordion-item>
+      <ng-template wshAccordionTitle>
+        <div>
+          <div>🔥🔥🔥🔥 Egyedi címsor</div>
+          <span style="font-size: 0.8rem">Lorem ipsum dolor sit amet.</span>
+        </div>
+      </ng-template>
+
+      <ng-template wshAccordionContent>
+        <div style="padding: 1rem">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde
+          quibusdam assumenda architecto facilis adipisci natus, aspernatur
+          voluptatem corporis ratione, repellat sit aut delectus autem pariatur
+          ullam magni soluta, debitis eligendi?
+        </div>
+      </ng-template>
+    </wsh-accordion-item>
+
+    <wsh-accordion-item title="Kikapcsolt állapot" [disabled]="true">
+      <ng-template wshAccordionContent>
+        <div style="padding: 1rem">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde
+          quibusdam assumenda architecto facilis adipisci natus, aspernatur
+          voluptatem corporis ratione, repellat sit aut delectus autem pariatur
+          ullam magni soluta, debitis eligendi?
+        </div>
+      </ng-template>
+    </wsh-accordion-item>
+  </wsh-accordion>
+  <div>
+    <p>
+      Mód: <strong>{{ collapsing ? "Bezárás mód" : "Több lenyitható" }}</strong>
+    </p>
+    <button (click)="collapsing = !collapsing">Működés változtatása</button>
+  </div>
+</div>
+<h1>Accordion Test</h1>
+<div style="max-width: 800px; width: 90%; height: 100%; margin: 0 auto">
+  <wsh-accordion>
+    <wsh-accordion-item title="Alapértelmezett címsor">
+      <ng-template wshAccordionContent>
+        <div style="padding: 1rem">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde
+          quibusdam assumenda architecto facilis adipisci natus, aspernatur
+          voluptatem corporis ratione, repellat sit aut delectus autem pariatur
+          ullam magni soluta, debitis eligendi?
+        </div>
+      </ng-template>
+    </wsh-accordion-item>
+
+    <wsh-accordion-item [disabled]="true">
+      <ng-template wshAccordionHeader let-toggle="toggle">
+        <div
+          style="
+            padding: 0 1rem;
+            background-color: aqua;
+            display: flex;
+            align-items: center;
+            height: 50px;
+            justify-content: space-between;
+          "
+        >
+          <div>🔥🔥 Saját header 🔥🔥</div>
+          <div><button (click)="toggle()">Toggle</button></div>
+        </div>
+      </ng-template>
+
+      <ng-template wshAccordionContent>
+        <div style="padding: 1rem">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde
+          quibusdam assumenda architecto facilis adipisci natus, aspernatur
+          voluptatem corporis ratione, repellat sit aut delectus autem pariatur
+          ullam magni soluta, debitis eligendi?
+        </div>
+      </ng-template>
+    </wsh-accordion-item>
+
+    <wsh-accordion-item>
+      <ng-template wshAccordionTitle>
+        <div>
+          <div>🔥🔥🔥🔥 Egyedi címsor</div>
+          <span style="font-size: 0.8rem">Lorem ipsum dolor sit amet.</span>
+        </div>
+      </ng-template>
+
+      <ng-template wshAccordionContent>
+        <div style="padding: 1rem">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde
+          quibusdam assumenda architecto facilis adipisci natus, aspernatur
+          voluptatem corporis ratione, repellat sit aut delectus autem pariatur
+          ullam magni soluta, debitis eligendi?
+        </div>
+      </ng-template>
+    </wsh-accordion-item>
+
+    <wsh-accordion-item title="Kikapcsolt állapot" [disabled]="true">
+      <ng-template wshAccordionContent>
+        <div style="padding: 1rem">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde
+          quibusdam assumenda architecto facilis adipisci natus, aspernatur
+          voluptatem corporis ratione, repellat sit aut delectus autem pariatur
+          ullam magni soluta, debitis eligendi?
+        </div>
+      </ng-template>
+    </wsh-accordion-item>
+  </wsh-accordion>
+</div>
+<router-outlet></router-outlet>

@@ -1,0 +1,60 @@
+/* A host-on belül definiálunk css változókat amiket tudunk majd használni */
+:host {
+  --accordion-header-height: 50px;
+  --accordion-header-bg: hsl(0, 0%, 95%);
+  --accordion-disabled: hsl(0, 0%, 60%);
+  --accordion-border-radius: 3px;
+  width: 100%;
+}
+.wsh-accordion {
+  border: 1px solid hsl(0, 0%, 80%);
+  border-radius: var(--accordion-border-radius);
+}
+.wsh-accordion__item:first-child .wsh-accordion__header {
+  border-radius: var(--accordion-border-radius) var(--accordion-border-radius) 0 0;
+}
+.wsh-accordion__item:last-child .wsh-accordion__header {
+  border-radius: 0 0 var(--accordion-border-radius) var(--accordion-border-radius);
+}
+
+/* Accordion alapértelmezett header */
+.wsh-accordion__header {
+  display: flex;
+  padding: 0 1rem;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid transparent;
+  height: var(--accordion-header-height);
+  cursor: pointer;
+  background: var(--accordion-header-bg);
+}
+
+/* Alapértelmezett gomb */
+.wsh-accordion__toggle-btn {
+  border: none;
+  transition: transform 0.3s ease-in;
+  background: none;
+}
+.wsh-accordion__toggle-btn:focus {
+  outline: none;
+}
+.wsh-accordion__toggle-btn:disabled {
+  cursor: not-allowed;
+}
+
+/* Alapértelmezett címsor */
+.wsh-accordion__title {
+  margin: 0;
+}
+
+ /* Az accordion itemhez tartozó állapotok kezelése */
+.wsh-accordion__item.disabled .wsh-accordion__header {
+  color: var(--accordion-disabled);
+  cursor: not-allowed;
+}
+.wsh-accordion__toggle-btn:disabled svg path:nth-child(2) {
+  fill: var(--accordion-disabled);
+}
+.wsh-accordion__item.active .wsh-accordion__toggle-btn {
+  transform: rotate(180deg);
+}

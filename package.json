@@ -6,7 +6,13 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "publish:common": "npm publish ./dist/common --registry=http://localhost:4873",
+    "publish:ui": "npm publish ./dist/ui-elements --registry=http://localhost:4873",
+    "common:version:patch": "cd ./projects/common && npm version patch",
+    "ui:version:patch": "cd ./projects/ui-elements && npm version patch",
+    "analyze:common": "ng build common-demo --stats-json && webpack-bundle-analyzer ./dist/common-demo/stats.json",
+    "analyze:ui": "ng build ui-elements --stats-json && webpack-bundle-analyzer ./dist/ui-elements/stats.json"
   },
   "private": true,
   "dependencies": {
@@ -23,16 +29,23 @@
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
+    "@angular-devkit/build-angular": "~13.0.1",
     "@angular/cli": "~13.0.1",
     "@angular/compiler-cli": "~13.0.0",
     "@types/jasmine": "~3.10.0",
     "@types/node": "^12.11.1",
+    "bootstrap": "^5.1.3",
+    "date-fns": "^2.25.0",
     "jasmine-core": "~3.10.0",
     "karma": "~6.3.0",
     "karma-chrome-launcher": "~3.1.0",
     "karma-coverage": "~2.0.3",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
-    "typescript": "~4.4.3"
+    "moment": "^2.29.1",
+    "ng-packagr": "^13.0.0",
+    "ng-samurai": "^3.0.0",
+    "typescript": "~4.4.3",
+    "webpack-bundle-analyzer": "^4.5.0"
   }
 }

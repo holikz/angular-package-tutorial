@@ -16,6 +16,24 @@
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
+    "paths": {
+      "@wsh/common/*": [
+        "projects/common/*",
+        "projects/common"
+      ],
+      "@wsh/common": [
+        "dist/common/*",
+        "dist/common"
+      ],
+      "@wsh/ui-elements/*": [
+        "projects/ui-elements/*",
+        "projects/ui-elements"
+      ],
+      "@wsh/ui-elements": [
+        "dist/ui-elements/*",
+        "dist/ui-elements"
+      ]
+    },
     "target": "es2017",
     "module": "es2020",
     "lib": [
